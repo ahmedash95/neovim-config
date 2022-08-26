@@ -31,6 +31,9 @@ return require('packer').startup(function ()
 	use 'hrsh7th/nvim-cmp'
 	use {'neoclide/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile'}
 
+	-- LangaugeClient
+	use { 'autozimu/LanguageClient-neovim', run = 'bash install.sh' }
+
 	-- status bar
 	use 'itchyny/lightline.vim'
 
@@ -78,7 +81,10 @@ return require('packer').startup(function ()
 
 	-- fzf
 	use 'junegunn/fzf'
-	
+	use 'junegunn/fzf.vim'
+	use 'wookayin/fzf-ripgrep.vim'	
+	use 'duane9/nvim-rg'
+
 	use { 'ibhagwan/fzf-lua',
 	  -- optional for icon support
 	  requires = { 'kyazdani42/nvim-web-devicons' }
@@ -87,5 +93,15 @@ return require('packer').startup(function ()
 	-- Themes
 	use 'gruvbox-community/gruvbox'
 	use 'projekt0n/github-nvim-theme'
+	use 'michaeldyrynda/carbon'
 
+	-- Blade
+	use 'jwalton512/vim-blade'
+
+	-- Tagbar
+	use 'preservim/tagbar'
+
+	-- ctrlp
+	use 'ctrlpvim/ctrlp.vim'
+	use 'tacahiroy/ctrlp-funky'
 end)

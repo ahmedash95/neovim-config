@@ -12,8 +12,8 @@ keymap.set('n','<leader>ee', ':source $MYVIMRC<CR>')
 keymap.set('n','<leader>1',':NvimTreeToggle<Return>')
 
 -- Splits
-keymap.set('n', 'ss', ':split<Return>')
-keymap.set('n', 'vv', ':vsplit<Return>')
+keymap.set('n', 'ss', ':split<Return><C-w><C-j>')
+keymap.set('n', 'vv', ':vsplit<Return><C-w><C-l>')
 -- Managing splits
 keymap.set('n', '<C-k>', ':resize -5<CR>')
 keymap.set('n', '<C-j>', ':resize +5<CR>')
@@ -22,7 +22,8 @@ keymap.set('n', '<C-h>', ':vertical resize -5<CR>')
 
 -- Fzf
 keymap.set('n', '<leader>p', ':FzfLua files<CR>')
-keymap.set('n', '<leader>r', ':Rg<CR>')
+keymap.set('n', '<leader>b', ':FzfLua buffers<CR>')
+keymap.set('n', '<leader>r', ':RgFzf<CR>')
 
 -- Tabs
 keymap.set('n', '<C-n>', ':tabn<CR>')
@@ -37,9 +38,12 @@ keymap.set('n', '<C-]>', ':PhpactorGotoDefinition<CR>')
 keymap.set('n', '<C-B>', ':PhpactorContextMenu<CR>')
 
 -- Run tests
-keymap.set('n', '<leader>t', ':TestFile<CR>')
-keymap.set('n', '<leader>a', ':TestSuite<CR>')
-keymap.set('n', '<leader>c', ':TestNearest<CR>')
+keymap.set('n', '<leader>t', ':TestFile --testdox<CR>')
+keymap.set('n', '<leader>a', ':TestSuite --testdox<CR>')
+keymap.set('n', '<leader>c', ':TestNearest --testdox<CR>')
 
 -- Autoimport
 keymap.set('n', '<leader>u', ':PhpactorImportClass<CR>')
+
+-- File methods
+keymap.set('n', '<leader>o', ':CtrlPFunky<CR>')
